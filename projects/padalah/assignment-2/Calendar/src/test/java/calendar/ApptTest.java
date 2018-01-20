@@ -100,4 +100,47 @@ public class ApptTest {
 		appt.setRecurrence(recurDays1, recurBy, recurIncrement, recurNumber);
 		//assertEquals(0, appt.getRecurDays());
 	}
+
+	@Test
+	public void test04() throws Throwable {
+		int startHour = 21;
+		int startMinute = 30;
+		int startDay = 15;
+		int startMonth = 01;
+		int startYear = 2018;
+		String title = "Birthday Party";
+		String description = "This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt appt = new Appt(startHour,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		appt.setStartHour(25);
+		assertEquals(25,appt.getStartHour());
+		appt.setStartHour(-1);
+		assertEquals(-1,appt.getStartHour());
+		appt.setStartHour(9);
+		appt.setStartMinute(60);
+		assertEquals(60,appt.getStartMinute());
+		appt.setStartMinute(-1);
+		assertEquals(-1,appt.getStartMinute());
+		appt.setStartMinute(30);
+		appt.setStartDay(45);
+		assertEquals(45,appt.getStartDay());
+		appt.setStartDay(-1);
+		assertEquals(-1,appt.getStartDay());
+		appt.setStartMonth(01);
+		assertEquals(01,appt.getStartMonth());
+		appt.setStartYear(1885);
+		appt.setDescription(null);
+		appt.setTitle(null);
+		assertEquals(1885,appt.getStartYear());
+		assertEquals("", appt.getDescription());
+		assertEquals("",appt.getTitle());
+		assertNull(appt.toString());
+		Appt appt1 = new Appt(0,65,45,12,1885, "we are awesome", "awesome");
+	}
 }

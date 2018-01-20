@@ -41,17 +41,54 @@ public class CalDayTest {
 		 CalDay cal= new CalDay (today);
 		 CalDay calnull = new CalDay ();
 		 assertTrue(cal.isValid());
-		 //assertEquals(cal.getAppts().iterator(), cal.iterator());
+		 cal.iterator();
+		 calnull.iterator();
 		 assertEquals(1, cal.getMonth());
 		 assertEquals(2018,cal.getYear());
-		 assertEquals(18,cal.getDay());
+		 assertEquals(19,cal.getDay());
 		 cal.addAppt(appt);
 		 cal.addAppt(appt1);
 		 cal.addAppt(appt2);
+		 cal.addAppt(appt);
+		 calnull.toString();
 	 }
 	 @Test
 	  public void test02()  throws Throwable  {
-		 
+		 int startHour = 25;
+		 int startMinute = 30;
+		 int startDay = 15;
+		 int startMonth = 01;
+		 int startYear = 2018;
+		 String title = "Birthday Party";
+		 String description = "This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt appt = new Appt(startHour,
+				 startMinute,
+				 startDay,
+				 startMonth,
+				 startYear,
+				 title,
+				 description);
+		 Appt appt1 = new Appt(9,
+				 startMinute,
+				 startDay,
+				 startMonth,
+				 startYear,
+				 title,
+				 description);
+		 Calendar rightnow = Calendar.getInstance();
+		 //current month/year/date is today
+		 int thisMonth = rightnow.get(Calendar.MONTH)+1;
+		 int thisYear = rightnow.get(Calendar.YEAR);
+		 int thisDay = rightnow.get(Calendar.DAY_OF_MONTH);
+		 GregorianCalendar today = new GregorianCalendar(thisYear,thisMonth,thisDay);
+		 GregorianCalendar faketoday = new GregorianCalendar(thisYear,thisMonth,32);
+		 CalDay cal= new CalDay (today);
+		 CalDay cal1= new CalDay (faketoday);
+		 cal.addAppt(appt);
+		 cal.addAppt(appt1);
+		 cal.toString();
+		 cal1.toString();
 	 }
 //add more unit tests as you needed	
 }
