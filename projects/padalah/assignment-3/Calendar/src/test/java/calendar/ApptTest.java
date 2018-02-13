@@ -382,5 +382,27 @@ public class ApptTest {
 		assertEquals(0,appt.getRecurIncrement());
 	}
 
+	@Test (expected = ArrayIndexOutOfBoundsException.class)
+	public void test13() throws Throwable {
+		int startHour = 21;
+		int startMinute = 30;
+		int startDay = 15;
+		int startMonth = 01;
+		int startYear = 2018;
+		String title = "Birthday Party";
+		String description = "This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt appt = new Appt(startHour,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		appt.setStartMonth(15);
+		assertFalse(appt.getValid());
+		//assertEquals(java.lang.ArrayIndexOutOfBoundsException, appt.getStartMonth());
+	}
+
 
 }

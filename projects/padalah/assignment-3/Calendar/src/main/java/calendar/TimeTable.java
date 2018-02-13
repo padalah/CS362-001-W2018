@@ -68,8 +68,8 @@ public class TimeTable {
 
 				while (nextDay.before(apptOccursOn)) {
 					daysDifference++;
-					//nextDay.add(nextDay.DAY_OF_MONTH, 1);
-					nextDay.add(nextDay.DAY_OF_MONTH, daysDifference);
+					nextDay.add(nextDay.DAY_OF_MONTH, 1);
+					//nextDay.add(nextDay.DAY_OF_MONTH, daysDifference);
 				}
 
 				CalDay calDayOfAppt = (CalDay) calDays.get(daysDifference);

@@ -218,4 +218,56 @@ public class CalDayTest {
 		cal.addAppt(appt4);
 		assertEquals(3,cal.getAppts().get(1).getStartHour());
 	}
+
+	@Test
+	public void test05()  throws Throwable {
+		int startHour = 25;
+		int startMinute = 30;
+		int startDay = 15;
+		int startMonth = 01;
+		int startYear = 2018;
+		String title = "Birthday Party";
+		String description = "This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt appt = new Appt(startHour,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		Appt appt1 = new Appt(7,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		Appt appt2 = new Appt(6,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		CalDay calnull = new CalDay();
+		Calendar rightnow = Calendar.getInstance();
+		int thisMonth = rightnow.get(Calendar.MONTH)+1;
+		int thisYear = rightnow.get(Calendar.YEAR);
+		int thisDay = rightnow.get(Calendar.DAY_OF_MONTH);
+		GregorianCalendar today = new GregorianCalendar(thisYear,thisMonth,thisDay);
+		GregorianCalendar faketoday = new GregorianCalendar(thisYear,thisMonth,32);
+		CalDay cal= new CalDay (today);
+		cal.addAppt(appt);
+		cal.addAppt(appt1);
+		cal.addAppt(appt2);
+		assertEquals(null, calnull.iterator());
+		Iterator <?> iter = cal.iterator();
+		int count=1;
+		while(iter.hasNext()){
+			count++;
+			Object element= iter.next();
+		}
+		assertEquals(3,count);
+	}
 }

@@ -12,6 +12,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
 
+
 import static org.junit.Assert.*;
 
 public class TimeTableTest {
@@ -497,6 +498,91 @@ public class TimeTableTest {
 			//System.err.println("error");
 		//}
 		//assertEquals(1,timeTable.getApptRange(listAppts, today1, today1).size());
+	}
+
+	@Test
+	public void test08() throws Throwable{
+		LinkedList<Appt> listAppts = new LinkedList<Appt>();
+		Calendar rightnow = Calendar.getInstance();
+		int thisMonth = rightnow.get(Calendar.MONTH) + 1;
+		int thisYear = rightnow.get(Calendar.YEAR);
+		int thisDay = rightnow.get(Calendar.DAY_OF_MONTH);
+		GregorianCalendar today = new GregorianCalendar(thisYear, thisMonth, thisDay);
+		GregorianCalendar tomorrow = (GregorianCalendar) today.clone();
+		tomorrow.add(Calendar.DAY_OF_MONTH, 3);
+		TimeTable timeTable = new TimeTable();
+		int startHour = 21;
+		int startMinute = 30;
+		int startDay = rightnow.get(Calendar.DAY_OF_MONTH);
+		int startMonth = rightnow.get(Calendar.MONTH) + 1;
+		int startYear = 2018;
+		String title = "Birthday Party";
+		String description = "This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt appt = new Appt(startHour,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		Appt appt1 = new Appt (14, 30, rightnow.get(Calendar.DAY_OF_MONTH)+1,
+				rightnow.get(Calendar.MONTH) + 1, 2018, title, description);
+		assertEquals(0,listAppts.size());
+		listAppts.add(appt);
+		listAppts.add(appt1);
+		assertEquals(2,listAppts.size());
+		LinkedList <CalDay> calDays = timeTable.getApptRange(listAppts, today, tomorrow);
+		//LinkedList <Appt> apptresult = calDays.get(0).getAppts().get(0);
+		assertEquals(appt,calDays.get(0).getAppts().get(0));
+		assertEquals(appt1,calDays.get(1).getAppts().get(0));
+	}
+
+	@Test
+	public void test09() throws Throwable{
+		LinkedList<Appt> listAppts = new LinkedList<Appt>();
+		Calendar rightnow = Calendar.getInstance();
+		int thisMonth = rightnow.get(Calendar.MONTH) + 1;
+		int thisYear = rightnow.get(Calendar.YEAR);
+		int thisDay = rightnow.get(Calendar.DAY_OF_MONTH);
+		GregorianCalendar today = new GregorianCalendar(thisYear, thisMonth, thisDay);
+		GregorianCalendar tomorrow = (GregorianCalendar) today.clone();
+		tomorrow.add(Calendar.DAY_OF_MONTH, 7);
+		TimeTable timeTable = new TimeTable();
+		int startHour = 21;
+		int startMinute = 30;
+		int startDay = rightnow.get(Calendar.DAY_OF_MONTH);
+		int startMonth = rightnow.get(Calendar.MONTH) + 1;
+		int startYear = 2018;
+		String title = "Birthday Party";
+		String description = "This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt appt = new Appt(startHour,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+		Appt appt1 = new Appt (14, 30, rightnow.get(Calendar.DAY_OF_MONTH)+1,
+				rightnow.get(Calendar.MONTH) + 1, 2018, title, description);
+		assertEquals(0,listAppts.size());
+		int [] recurDays = {0,1,2,3,4,5,6};
+		int recurBy = 1;
+		int recurIncrement=1;
+		int recurNumber=7;
+		appt.setRecurrence(recurDays, recurBy, recurIncrement, recurNumber);
+		listAppts.add(appt);
+		LinkedList <CalDay> calDays = timeTable.getApptRange(listAppts, today, tomorrow);
+		//for(int i=0; i<7; i++){
+			assertEquals(appt, calDays.get(0).getAppts().get(0));
+			assertEquals(appt, calDays.get(1).getAppts().get(0));
+			assertEquals(appt, calDays.get(2).getAppts().get(0));
+			assertEquals(appt, calDays.get(3).getAppts().get(0));
+			assertEquals(appt, calDays.get(4).getAppts().get(0));
+			//assertEquals(appt, calDays.get(5).getAppts().get(0));
+			//assertEquals(appt, calDays.get(6).getAppts().get(0));
+		//}
 	}
 }
 
