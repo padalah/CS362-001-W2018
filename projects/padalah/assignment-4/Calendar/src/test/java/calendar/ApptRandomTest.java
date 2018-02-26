@@ -89,6 +89,7 @@ public class ApptRandomTest {
 						title,
 						description);
 				if (!appt.getValid()) continue;
+				//adding stuff so i can commit without target folder
 				for (int i = 0; i < NUM_TESTS; i++) {
 					String methodName = ApptRandomTest.RandomSelectMethod(random);
 					if (methodName.equals("setTitle")) {
