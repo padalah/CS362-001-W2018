@@ -110,7 +110,6 @@ public class Appt implements  Comparable<Appt>{
      * @sets valid to true if the appointment is valid
      */
     private void isValid() {
-    	//int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
 		int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth); //BUG HERE: got rid of the -1 on startMonth in the method call
     				
     	if(startHour<0 || startHour>23)

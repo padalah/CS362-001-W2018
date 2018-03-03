@@ -6,7 +6,6 @@ package calendar;
  */
 
 
-
 import java.util.*;
 
 
@@ -125,7 +124,6 @@ public class CalDay {
 	
 	/** Sets month */
 	private void setMonth(int month) {
-	    //this.month = month;
 		this.month = day; //BUG HERE: changed from =month to =day 
 	}
 	

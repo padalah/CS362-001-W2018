@@ -109,7 +109,6 @@ public class TimeTable {
 	            
 
 	            //Make sure that there is a limited number of recurrences
-	            //for (int i = 0; i < appt.getRecurNumber()+1; i++) {
 				for (int i = 0; i < appt.getRecurNumber(); i++) {	//BUG HERE: removed the +1 from appt.getRecurNumber()
 	                
 	                //Add the day of occurrence to the list if it is after the first day
@@ -160,7 +159,6 @@ public class TimeTable {
 	                
 	                //The user did specify weekly recurrence, so increment the
 	                //day until it falls on a weekday the user specified
-	               // for (int k = 0; k < 7; k++) {
 	                for (int k = 0; k <=7; k++) {   //BUG HERE: changed from k<7 to k<=7 
 						nextDay.add(nextDay.DAY_OF_MONTH, 1);
 	                    int newDayOfWeek = nextDay.get(nextDay.DAY_OF_WEEK);
