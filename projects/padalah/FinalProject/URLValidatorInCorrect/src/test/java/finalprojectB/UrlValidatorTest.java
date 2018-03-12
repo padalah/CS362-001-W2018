@@ -74,14 +74,32 @@ public class UrlValidatorTest extends TestCase {
    public void testYourFirstPartition()
    {
 	 //You can use this function to implement your First Partition testing	   
-
+      UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+      String httpVal = "http://255.com:80";
+      assertEquals(false, urlVal.isValid(httpVal));
    }
    
    public void testYourSecondPartition(){
-		 //You can use this function to implement your Second Partition testing	   
-
+      //You can use this function to implement your Second Partition testing
+      UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+      String httpVal = "ftp://www.google.com:80/test1?action=view";
+      assertEquals(true, urlVal.isValid(httpVal));
    }
-   //You need to create more test cases for your Partitions if you need to 
+   //You need to create more test cases for your Partitions if you need to
+
+   public void testYourThirdPartition(){
+      //You can use this function to implement your Second Partition testing
+      UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+      String value=null;
+      assertEquals(false, urlVal.isValid(value));
+   }
+
+   public void testYourFourthPartition(){
+      //You can use this function to implement your Second Partition testing
+      UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+      String httpVal = "http://www.google.com";
+      assertEquals(true, urlVal.isValid(httpVal));
+   }
    
    public void testIsValid()
    {
