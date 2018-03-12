@@ -43,7 +43,8 @@ public class CalDayTest {
 		assertTrue(cal.isValid());
 		cal.iterator();
 		calnull.iterator();
-		//FAILED HERE: assertEquals(1, cal.getMonth());
+		//FAILED HERE:
+		assertEquals(1, cal.getMonth());
 		assertEquals(thisDay, cal.getMonth());
 		assertNotEquals(thisMonth, cal.getMonth());
 		assertEquals(2018,cal.getYear());

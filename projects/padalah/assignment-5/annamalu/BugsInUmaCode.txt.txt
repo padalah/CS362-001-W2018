@@ -1,0 +1,24 @@
+I used both my unit and random tests that I wrote for my own application. 
+I identified the bugs by using these tests and seeing which tests failed and trying new tests. 
+Then I compared this with the java code of the class I was testing to find the main issues. Also when
+I ran the test with mvn test, my tests failed and I was given where the failures occured and what 
+the expected and current values were.
+I found three bugs through this process:
+    1.	Bug 1: In Appt, when the description is set the description is set to null when a valid string is entered or “” 
+    is it is an empty string is getting set because the if condition checks if it isn’t null not if is null. 
+    This bug has a huge impact because the description is never being set so no appointment has a description. 
+    I found this when I set the description and used assert functions to get the description.
+    Severity: High
+    Priority: High
+    2.	Bug 2: In Appt, in the isValid function when getting the number of days in a month, the wrong month is being call. 
+    This is because the month should be subtracted by one but it isn’t so it is being checked against the right month. 
+    I found this error because I tested the 12 month but I kept getting a test failure because that wasn’t the right number 
+    of days that were being returned because it was being read as that is an out of bound exception.
+    Severity: High
+    Priority: High
+    3.	Bug 3: In CalDay, when the month is set the month is set to day instead of month. 
+    This messes up the month that is set up by the calDay. 
+    I found this error by setting this month and using the getter function to assert that the right month 
+    was being set which it wasn’t being set.
+    Severity: Moderate
+    Priority: High

@@ -64,7 +64,8 @@ public class ApptTest {
 		assertEquals(01, appt.getStartMonth());
 		assertEquals(2018, appt.getStartYear());
 		assertEquals("Birthday Party", appt.getTitle());
-		//FAILED HERE (GET DESCRIPTION): assertEquals("This is my birthday party.", appt.getDescription());
+		//FAILED HERE (GET DESCRIPTION):
+		assertEquals("This is my birthday party.", appt.getDescription());
 	}
 
 	//add more unit tests as you needed
@@ -147,11 +148,13 @@ public class ApptTest {
 		appt.setDescription(null);
 		appt.setTitle(null);
 		assertEquals(1885, appt.getStartYear());
-		//FAILED HERE(GET DESCRIPTION): //assertEquals("", appt.getDescription());
+		//FAILED HERE(GET DESCRIPTION):
+		assertEquals("", appt.getDescription());
 		assertEquals(null, appt.getDescription());
 		assertEquals("", appt.getTitle());
 		assertNull(appt.toString());
-		//FAILED HERE (START MONTH): Appt appt1 = new Appt(0, 65, 45, 12, 1885, "we are awesome", "awesome");
+		//FAILED HERE (START MONTH):
+		Appt appt1 = new Appt(0, 65, 45, 12, 1885, "we are awesome", "awesome");
 	}
 
 	@Test
@@ -375,7 +378,8 @@ public class ApptTest {
 		appt.setStartDay(3);
 		appt.setStartMonth(1);
 		assertTrue(appt.getValid());
-		//FAILED HERE (GET START MONTH): appt.setStartMonth(12);
+		//FAILED HERE (GET START MONTH):
+		appt.setStartMonth(12);
 		appt.setStartMonth(10);
 		assertTrue(appt.getValid());
 		assertEquals(2,appt.getRecurBy());

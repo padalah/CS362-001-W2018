@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="calendar.TimeTableTest" time="89.491" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="calendar.TimeTableTest" time="89.445" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="9+181"/>
@@ -65,7 +65,7 @@
   </properties>
   <testcase classname="calendar.TimeTableTest" name="test01" time="0"/>
   <testcase classname="calendar.TimeTableTest" name="test02" time="0"/>
-  <testcase classname="calendar.TimeTableTest" name="randomtest1" time="29.639"/>
+  <testcase classname="calendar.TimeTableTest" name="randomtest1" time="29.592"/>
   <testcase classname="calendar.TimeTableTest" name="randomtest2" time="29.852"/>
-  <testcase classname="calendar.TimeTableTest" name="randomtest" time="30"/>
+  <testcase classname="calendar.TimeTableTest" name="randomtest" time="30.001"/>
 </testsuite>
