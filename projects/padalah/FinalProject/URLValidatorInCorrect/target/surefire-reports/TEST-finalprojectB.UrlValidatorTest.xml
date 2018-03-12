@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="13" failures="3" name="finalprojectB.UrlValidatorTest" time="0.068" errors="1" skipped="0">
+<testsuite tests="13" failures="4" name="finalprojectB.UrlValidatorTest" time="0.073" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="9+181"/>
@@ -63,12 +63,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourThirdPartition" time="0.025"/>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourSecondPartition" time="0.029">
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourThirdPartition" time="0.022"/>
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourSecondPartition" time="0.036">
     <error type="java.lang.ExceptionInInitializerError">java.lang.ExceptionInInitializerError
 	at finalprojectB.UrlValidator.isValidAuthority(UrlValidator.java:393)
 	at finalprojectB.UrlValidator.isValid(UrlValidator.java:327)
-	at finalprojectB.UrlValidatorTest.testYourSecondPartition(UrlValidatorTest.java:86)
+	at finalprojectB.UrlValidatorTest.testYourSecondPartition(UrlValidatorTest.java:88)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -105,7 +105,7 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
   </testcase>
   <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest01" time="0"/>
   <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest02" time="0"/>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest03" time="0">
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest03" time="0.003">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
@@ -113,7 +113,7 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at junit.framework.Assert.assertEquals(Assert.java:174)
 	at junit.framework.Assert.assertEquals(Assert.java:181)
 	at junit.framework.TestCase.assertEquals(TestCase.java:341)
-	at finalprojectB.UrlValidatorTest.testManualTest03(UrlValidatorTest.java:39)
+	at finalprojectB.UrlValidatorTest.testManualTest03(UrlValidatorTest.java:41)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,10 +141,10 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest04" time="0"/>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest05" time="0"/>
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest04" time="0.001"/>
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest05" time="0.001"/>
   <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest06" time="0"/>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest07" time="0.01">
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest07" time="0.001">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
@@ -152,7 +152,7 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at junit.framework.Assert.assertEquals(Assert.java:174)
 	at junit.framework.Assert.assertEquals(Assert.java:181)
 	at junit.framework.TestCase.assertEquals(TestCase.java:341)
-	at finalprojectB.UrlValidatorTest.testManualTest07(UrlValidatorTest.java:65)
+	at finalprojectB.UrlValidatorTest.testManualTest07(UrlValidatorTest.java:67)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -180,7 +180,7 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest08" time="0.003">
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testManualTest08" time="0.001">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
@@ -188,7 +188,7 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at junit.framework.Assert.assertEquals(Assert.java:174)
 	at junit.framework.Assert.assertEquals(Assert.java:181)
 	at junit.framework.TestCase.assertEquals(TestCase.java:341)
-	at finalprojectB.UrlValidatorTest.testManualTest08(UrlValidatorTest.java:71)
+	at finalprojectB.UrlValidatorTest.testManualTest08(UrlValidatorTest.java:73)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -216,7 +216,40 @@ Caused by: java.lang.IllegalArgumentException: Regular expressions are missing
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourFourthPartition" time="0"/>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourFirstPartition" time="0.001"/>
-  <testcase classname="finalprojectB.UrlValidatorTest" name="testIsValid" time="0"/>
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourFourthPartition" time="0.002"/>
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testYourFirstPartition" time="0"/>
+  <testcase classname="finalprojectB.UrlValidatorTest" name="testIsValid" time="0.006">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at junit.framework.TestCase.assertTrue(TestCase.java:201)
+	at finalprojectB.UrlValidatorTest.testIsValid(UrlValidatorTest.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+  </testcase>
 </testsuite>
